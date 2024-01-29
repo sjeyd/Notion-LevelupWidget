@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Levelup</title>
+</head>
+<body>
+  <div class="fire-background"></div>
+
+  <div class="outer-circle">
+    <div class="inner-circle">
+      <div class="number" id="numberDisplay">
+        100 <!-- Your initial number goes here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="button" onclick="changeNumber(1)">Increase</button>
+    <button class="button" onclick="changeNumber(-1)">Decrease</button>
+  </div>
+    <svg>
+    <filter id="wavy">
+        <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+            <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="infinite"></animate>
+        </feTurbulence>
+        
+        <feDisplacementMap in="SourceGraphic" scale="30">
+
+        </feDisplacementMap>
+    </filter>
+    </svg>  
+  <script>
+    let currentNumber = 0; // Initial number
+    const numberDisplay = document.getElementById('numberDisplay');
+
+    function changeNumber(amount) {
+      currentNumber += amount;
+      numberDisplay.textContent = currentNumber;
+    }   
+  </script>
+</body>
+</html>
