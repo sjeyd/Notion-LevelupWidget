@@ -18,8 +18,8 @@ body {
 
   .outer-circle {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     background: conic-gradient(
       from 0deg,
@@ -51,7 +51,7 @@ body {
   }
 
   .number {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
   }
 
